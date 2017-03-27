@@ -1,0 +1,72 @@
+<div data-bind="with: creatorData" style="height:100%; overflow-y:scroll; overflow-x:hidden">
+  <!--<div data-bind="text: $root.page().componentName"></div>-->
+  <div class="creatorWrap" data-bind="style: { backgroundColor: $parent.displayColorBackgroundBack }">
+    <div class="dateSerial">
+      <p data-bind="text: month" class="month"></p>
+      <p data-bind="text: day" class="day"></p>
+      <p data-bind="text: serial" class="serial"></p>
+    </div>
+
+    <div class="bgImage" data-bind="style: { backgroundImage: 'url(\'/' + imgBackground + '\')' }, css: { showDetail: $parent.status().showDetail }">
+      <div class="bgColorFore" data-bind="style: { backgroundColor: $parent.displayColorBackgroundFore }">
+        <div data-bind="css: { showDetail: $parent.status().showDetail }" class="shirtsArea floatLayout">
+          <div data-bind="touch: $parent.toggleDetail"class="shirtsImg">
+            <img data-bind="attr: { src : imgShirts }" class="">
+            <p class="taCenter fsLarge lh10"><span data-bind="text : price"></span>yen</p>
+          </div>
+          <div class="sideText lh15">
+            <p data-bind="text: name"></p>
+            <p data-bind="text: job"></p>
+            <p data-bind="text: description"></p>
+          </div>
+        </div>
+        <div data-bind="css:{ showDetail: $parent.status().showDetail }" class="creatorInfoArea paLeftRight10 lh15">
+          <div class="arrow taCenter">▼</div>
+          <div class="floatLayout">
+            <div class="w40per">
+              <img data-bind="attr : { src : imgCreatorThumbnail }" class="thumbnail w90per">
+            </div>
+            <div class="w60per">
+              <p data-bind="text: name"></p>
+              <p data-bind="text: job"></p>
+              <p data-bind="text: technique"></p>
+            </div>
+          </div>
+          <p>about</p>
+          <p data-bind="text: about"></p>
+          <p>biography</p>
+          <p data-bind="text: biography"></p>
+          <p data-bind="if : url1 != 'NULL'" class="ofEllipsis">
+            <a data-bind="attr: { href: url1 }">
+              <span data-bind="text: url1"></span>
+            </a>
+          </p>
+          <p data-bind="if : url2 != 'NULL'" class="ofEllipsis">
+            <a data-bind="attr: { href: url2 }">
+              <span data-bind="text: url2"></span>
+            </a>
+          </p>
+          <p data-bind="if : url3 != 'NULL'" class="ofEllipsis">
+            <a data-bind="attr: { href: url3 }">
+              <span data-bind="text: url3"></span>
+            </a>
+          </p>
+          <p class="taCenter fsLarge lh10"><span data-bind="text : price"></span>yen</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="creatorFooter">
+    <div class="buyArea">
+      <a data-bind="attr: { href: storeUrl }, visible: isToday == '1'" class="buyBtn"></a>
+    </div>
+    <div class="iconMenu">
+      <div data-bind="touch: $parent.showDetail, visible: !$parent.status().showDetail" class="informationBtn"></div>
+      <div data-bind="touch: $parent.hideDetail, visible: $parent.status().showDetail" class="returnBtn"></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</div>

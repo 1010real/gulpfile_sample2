@@ -1,0 +1,17 @@
+<div style="height:100%; overflow-y:scroll; overflow-x:hidden">
+  <ul data-bind="foreach: creatorDataList" class="weekList">
+    <li data-bind="style: { backgroundImage: 'url(\'/' + imgBackgroundWeek + '\')' }, css:{ today: isToday == '1', past: isPast == '1', future: isFuture == '1', anotherMonth:isInMonth == '0' }" class="weekCreatorInfo">
+      <div class="dateSerial">
+        <p data-bind="text: month" class="month"></p>
+        <p data-bind="text: day" class="day"></p>
+        <p data-bind="text: serial" class="serial"></p>
+      </div>
+  <!--
+      <img data-bind="attr: { src : imgShirts }" class="shirts">
+      <img data-bind="attr : { src : imgCreatorThumbnail }" class="thumbnail">
+      <p data-bind="text: name" class="name"></p>
+  -->
+      <a data-bind="attr: { href: '/list/oneday/' + date }" class="link"></a>
+    </li>
+  </ul>
+</div>

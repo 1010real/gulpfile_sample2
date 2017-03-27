@@ -1,0 +1,45 @@
+<div class="headerMenu">
+  <a href="/list/today" class="logo">tagtag</a>
+  <div data-bind="touch:toggleMenu" id="gmenuBtn" class="btn gmenu"></div>
+  <div data-bind="click:toggleCalendar" id="cmenuBtn" class="btn cmenu"><span class="downMark">▼&nbsp;</span><span data-bind="text:status().calendarMenuText"></span></div>
+  <nav data-bind="css: { show: status().showCalendarMenu, hide: status().hideCalendarMenu }" class="cmenuArea">
+    <ul>
+      <li class="today"><span data-bind="click:loadPageCalendar" data-href="/list/today" data-menu-text="today">today</span></li>
+      <li class="week"><span data-bind="click:loadPageCalendar" data-href="/list/week" data-menu-text="week">week</span></li>
+      <li class="month"><span data-bind="click:loadPageCalendar" data-href="/list/month" data-menu-text="month">month</span></li>
+    </ul>
+  </nav>
+</div>
+
+<nav data-bind="css: { showMenu: status().showMenu }" id="gmenu" class="gmenuArea">
+  <ul>
+    <li><a data-href="/list/today" data-bind="click:loadPageMenu"><span class="menuIcon home"></span>home</a></li>
+    <li><a data-href="/setting/transaction" data-bind="click:loadPageMenu"><span class="menuIcon setting"></span>特定商取引法</a></li>
+    <li><a data-href="/setting/policy" data-bind="click:loadPageMenu"><span class="menuIcon setting"></span>プライバシーポリシー</a></li>
+    <li><a data-href="" class="peNone fcGray"><span class="menuIcon favorites"></span>favorites/お気に入り</a></li>
+    <li><a data-href="" class="peNone fcGray"><span class="menuIcon records"></span>records/購入履歴</a></li>
+    <li><a data-href="" class="peNone fcGray"><span class="menuIcon coupon"></span>coupon/クーポン受け取り</a></li>
+    <li><a data-href="" class="peNone fcGray"><span class="menuIcon about"></span>about you/個人情報の変更</a></li>
+    <li class="child">
+      <ul>
+        <li>・メールアドレスの変更</li>
+        <li>・パスワードの変更</li>
+        <li>・お届け先の変更</li>
+        <li>・クレジットカード情報の変更</li>
+      </ul>
+    </li>
+    <li><a data-href="" class="peNone fcGray"><span class="menuIcon setting"></span>setting/設定</a></li>
+    <li class="child">
+      <ul>
+        <li>・利用規約</li>
+        <li>・プライバシーポリシー</li>
+        <li>・特定商取引法</li>
+        <li>・FAQ</li>
+        <li>・お問い合わせフォーム</li>
+      </ul>
+    </li>
+    <li><a data-href="" class="peNone fcGray"><span class="menuIcon tutorial"></span>tutorial/チュートリアル</a></li>
+    <li><a data-href="" class="peNone fcGray"><span class="menuIcon tagtag"></span>tagtag/tagtagについて</a></li>
+  </ul>
+  <!-- <div class="btn">sign out</div> -->
+</nav>

@@ -1,0 +1,207 @@
+/*
+複数ページで使用するパーツ軍
+
+Styles for list/week page.
+
+Styleguide 10
+*/
+
+/*
+creatorWrap
+
+creator情報（buyページ）
+
+Styleguide 10.1
+*/
+.creatorWrap {
+  min-height:100%;
+  position:relative;
+  transition-property: 'background-color';
+  transition-duration: 300ms;
+  transition-timing-function: linear;
+  .dateSerial {
+    position:absolute;
+    left: 8px;
+    top: 56px;
+  }
+  .bgImage {
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    min-height: 100vh; // 569px
+    &.showDetail {
+      background-color:rbga
+    }
+  }
+  .bgColorFore {
+    transition-property: 'background-color';
+    transition-duration: 300ms;
+    transition-timing-function: linear;
+  }
+  .shirtsArea {
+    width:170%;
+    padding-top:66px;
+    transform:translate(0%, 0);
+    transition:transform 300ms;
+    &.showDetail {
+      transform:translate(-33%, 0);
+    }
+    .shirtsImg {
+      padding-right: 4%;
+      padding-left: 4%;
+      width: 52%;
+      img {
+        width:100%;
+        vertical-align: bottom;
+      }
+    }
+    .sideText {
+      width:30%;
+      color:#ffffff;
+    }
+  }
+  .creatorInfoArea {
+    height:0px;
+    overflow:hidden;
+    padding-bottom:70px;
+    opacity:0;
+    .arrow {
+      padding-top:30px;
+      padding-bottom:30px;
+    }
+    .thumbnail {
+      border-radius: 50%;
+    }
+    &.showDetail {
+      height:auto;
+      overflow:visible;
+      opacity:1;
+      animation:animeCreatorInfo 600ms linear 0s 1 normal forwards;
+    }
+  }
+}
+
+.creatorFooter {
+  position:fixed !important;
+  position:absolute;
+  left:0px;
+  bottom:0px;
+  width:100%;
+  .iconMenu {
+    position:absolute;
+    bottom:10px;
+    right:10px;
+    .informationBtn {
+      width:30px;
+      height:30px;
+      background:url('/img/topIcon/2a.png') no-repeat;
+      background-size:30px 30px;
+    }
+    .returnBtn {
+      width:30px;
+      height:30px;
+      background:url('/img/topIcon/4a.png') no-repeat;
+      background-size:30px 30px;
+    }
+  }
+  .buyArea {
+    position:absolute;
+    bottom:0px;
+    height:67px;
+    width:100%;
+    .buyBtn {
+      display:block;
+      width:135px;
+      height:67px;
+      margin:0 auto;
+      background:url('/img/btnBuy.png') no-repeat;
+      background-size:135px 67px;
+    }
+  }
+}
+
+@keyframes animeCreatorInfo {
+  0% {
+    opacity:0;
+  }
+  50% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+/*
+dateSerial
+
+日付表示
+
+Styleguide 10.2
+*/
+.dateSerial {
+  border: 1px solid #FFFFFF;
+  padding: 4px;
+  margin: 2px;
+  height: 66px;
+  text-align: center;
+  .month {
+    line-height: 12px;
+    border-bottom: 1px solid #FFFFFF;
+    padding: 2px 0px;
+    font-size: 0.7rem;
+  }
+  .day {
+    line-height: 26px;
+    border-bottom: 1px solid #FFFFFF;
+    padding: 2px 0px;
+    font-size: 1.4rem;
+  }
+  .serial {
+    line-height: 14px;
+    padding: 2px 0px;
+    font-size: 0.7rem;
+  }
+}
+
+/*
+textArea
+
+一般的なテキスト表記
+
+Styleguide 10.3
+*/
+
+.textArea {
+  h2 {
+    font-size:1.2rem;
+    line-height:1.8;
+    background-color:#999;
+    color:#FFF;
+  }
+  h3 {
+    // font-size:1.2rem;
+    line-height:1.6;
+    color:#000;
+  }
+  p {
+    font-size:1.0rem;
+    line-height:1.2;
+    color:#999;
+  }
+}
+
+/*
+errorボタン
+*/
+.errorBtn {
+  display:block;
+  margin:0 auto;
+  background-color:#999;
+  color:#EEE;
+  text-align:center;
+  width:80%;
+  height:50px;
+  text-decoration:none;
+  line-height:50px;
+  font-size:1.2rem;
+}

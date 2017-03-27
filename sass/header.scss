@@ -1,0 +1,349 @@
+.headerMenu {
+  position:absolute;
+  display:block;
+  left:0px;
+  top:0px;
+  z-index:10;
+  width:100%;
+  height:50px;
+  background-color:rgba(255,255,255,0.6);
+  .logo {
+    display:block;
+    margin: 10px auto 0;
+    text-indent: 101%;
+    overflow: hidden;
+    width:110px;
+    height:31px;
+    background: url("/img/logo.png");
+    background-size: 110px 31px;
+  }
+  .btn {
+    position:absolute;
+    &.gmenu {
+      top:0px;
+      left:0px;
+      display:block;
+      width: 40px;
+      height: 40px;
+      background: url("/img/menu/menu.png") no-repeat;
+      background-size: 20px 20px;
+      background-position: 10px 10px;
+    }
+    &.cmenu {
+      top:8px;
+      right:6px;
+      margin:0px 4px;
+      display:block;
+      width: 56px;
+      height: 30px;
+      padding-left:4px;
+      line-height:30px;
+      background-color: #000000;
+      color: #ffffff;
+      font-size:0.8rem;
+      z-index:100;
+      text-align:left;
+      .downMark {
+        font-size:0.5rem;
+      }
+    }
+  }
+  .cmenuArea {
+    position:absolute;
+    right:6px;
+    top:8px;
+    li {
+      display:none;
+      margin:4px;
+      width: 60px;
+      height: 30px;
+      line-height: 30px;
+      opacity:0;
+      * {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      &.today {
+        * {
+          background-color: #000;
+          color: #EEE;
+          text-align: center;
+          font-size:0.8rem;
+          // line-height: 1.8;
+          // background: url(/img/calendar/todayB.png) no-repeat;
+          // background-size: 50px 20px;
+          &:hover, &:active, &.current {
+            background-color:#fff;
+            color: #000;
+          //   background: url(/img/calendar/todayA.png) no-repeat;
+          //   background-size: 50px 20px;
+          }
+        }
+      }
+      &.week {
+        * {
+          background-color: #000;
+          color: #EEE;
+          text-align: center;
+          font-size:0.8rem;
+          // line-height: 1.8;
+          // background: url(/img/calendar/weekB.png) no-repeat;
+          // background-size: 50px 20px;
+          &:hover, &:active, &.current {
+            background-color:#fff;
+            color: #000;
+          //   background: url(/img/calendar/weekA.png) no-repeat;
+          //   background-size: 50px 20px;
+          }
+        }
+      }
+      &.month {
+        * {
+          background-color: #000;
+          color: #EEE;
+          text-align: center;
+          font-size:0.8rem;
+          // line-height: 1.8;
+          // background: url(/img/calendar/monthB.png) no-repeat;
+          // background-size: 50px 20px;
+          &:hover, &:active, &.current {
+            background-color:#fff;
+            color: #000;
+          //   background: url(/img/calendar/monthA.png) no-repeat;
+          //   background-size: 50px 20px;
+          }
+        }
+      }
+    }
+    &.show li {
+      display:block;
+      &.today {
+        opacity:1;
+        transform:translate(0px,30px);
+        animation:animeMenuToday 1s linear 0s 1 normal forwards;
+      }
+      &.week {
+        opacity:1;
+        transform:translate(0px,30px);
+        animation:animeMenuWeek 1s linear 0s 1 normal forwards;
+      }
+      &.month {
+        opacity:1;
+        transform:translate(0px,30px);
+        animation:animeMenuMonth 1s linear 0s 1 normal forwards;
+      }
+    }
+    &.hide li {
+      display:block;
+      &.today {
+        opacity:0;
+        transform:translate(0px,0px);
+        animation:animeMenuTodayClose 0.5s linear 0s 1 normal forwards;
+      }
+      &.week {
+        opacity:0;
+        transform:translate(0px,0px);
+        animation:animeMenuWeekClose 0.5s linear 0s 1 normal forwards;
+      }
+      &.month {
+        opacity:0;
+        transform:translate(0px,0px);
+        animation:animeMenuMonthClose 0.5s linear 0s 1 normal forwards;
+      }
+    }
+  }
+}
+
+.gmenuArea {
+  z-index:10;
+  background-color:#000000;
+  color:#ffffff;
+  position:absolute;
+  top:50px;
+  width:80%;
+  height:calc(100% - 50px);
+  transform:translate(-100%, 0);
+  transition:transform 300ms;
+  &.showMenu {
+    transform:translate(0%, 0);
+  }
+  li {
+    width:100%;
+    line-height:30px;
+    // padding:5px;
+    &:hover, &:active {
+      background-color:gray;
+    }
+    &.child {
+      display:none;
+      li {
+      }
+    }
+    a {
+      display: block;
+      text-decoration: none;
+      color: #ffffff;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.menuIcon {
+  display: inline-block;
+  vertical-align: text-top;
+  width: 16px;
+  height: 16px;
+  margin-left: 5px;
+  margin-right: 5px;
+  &.about {
+    background: url("/img/menu/aboutYou.png");
+    background-size: 16px 16px;
+  }
+  &.coupon {
+    background: url("/img/menu/coupon.png");
+    background-size: 16px 16px;
+  }
+  &.favorites {
+    background: url("/img/menu/favorites.png");
+    background-size: 16px 16px;
+  }
+  &.home {
+    background: url("/img/menu/home.png");
+    background-size: 16px 16px;
+  }
+  &.records {
+    background: url("/img/menu/records.png");
+    background-size: 16px 16px;
+  }
+  &.setting {
+    background: url("/img/menu/setting.png");
+    background-size: 16px 16px;
+  }
+  &.tagtag {
+    background: url("/img/menu/tagtag.png");
+    background-size: 16px 16px;
+  }
+  &.tutorial {
+    background: url("/img/menu/tutorial.png");
+    background-size: 16px 16px;
+  }
+}
+
+@keyframes animeMenuToday {
+  0% {
+    opacity:0;
+    transform:translate(0px,0px);
+  }
+  20% {
+    opacity:1;
+    transform:translate(0px,30px);
+  }
+  100%{
+    opacity:1;
+    transform:translate(0px,30px);
+  }
+}
+
+@keyframes animeMenuWeek {
+  0% {
+    opacity:0;
+    transform:translate(0px,0px);
+  }
+  20% {
+    opacity:0;
+    transform:translate(0px,0px);
+  }
+  40% {
+    opacity:1;
+    transform:translate(0px,30px);
+  }
+  100%{
+    opacity:1;
+    transform:translate(0px,30px);
+  }
+}
+
+@keyframes animeMenuMonth {
+  0% {
+    opacity:0;
+    transform:translate(0px,0px);
+  }
+  40% {
+    opacity:0;
+    transform:translate(0px,0px);
+  }
+  60%{
+    opacity:1;
+    transform:translate(0px,30px);
+  }
+  100%{
+    opacity:1;
+    transform:translate(0px,30px);
+  }
+}
+
+@keyframes animeMenuTodayClose {
+  0% {
+    display:block;
+    opacity:1;
+    transform:translate(0px,30px);
+  }
+  40% {
+    display:block;
+    opacity:1;
+    transform:translate(0px,30px);
+  }
+  60% {
+    display:block;
+    opacity:0;
+    transform:translate(0px,0px);
+  }
+  100%{
+    display:none;
+    opacity:0;
+    transform:translate(0px,0px);
+  }
+}
+
+@keyframes animeMenuWeekClose {
+  0% {
+    display:block;
+    opacity:1;
+    transform:translate(0px,30px);
+  }
+  20% {
+    display:block;
+    opacity:1;
+    transform:translate(0px,30px);
+  }
+  40% {
+    display:block;
+    opacity:0;
+    transform:translate(0px,0px);
+  }
+  100%{
+    display:none;
+    opacity:0;
+    transform:translate(0px,0px);
+  }
+}
+
+@keyframes animeMenuMonthClose {
+  0% {
+    display:block;
+    opacity:1;
+    transform:translate(0px,30px);
+  }
+  20%{
+    display:block;
+    opacity:0;
+    transform:translate(0px,0px);
+  }
+  100%{
+    display:none;
+    opacity:0;
+    transform:translate(0px,0px);
+  }
+}

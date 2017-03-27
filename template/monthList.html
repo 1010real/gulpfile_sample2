@@ -1,0 +1,29 @@
+<div style="height:100%; overflow-y:scroll; overflow-x:hidden">
+  <div data-bind="with: monthList" class="monthList">
+    <div class="monthSelector">
+      <a data-bind="attr: { href: '/list/month/' + yearmonthPrev }, text: displayMonthPrev" class="prev"></a>
+      <p data-bind="text: displayMonth" class="current"></p>
+      <a data-bind="attr: { href: '/list/month/' + yearmonthNext} , text: displayMonthNext" class="next"></a>
+    </div>
+    <ul class="monthDayOfWeek floatLayout">
+      <li>Sun</li>
+      <li>Mon</li>
+      <li>Tue</li>
+      <li>Wed</li>
+      <li>Thu</li>
+      <li>Fri</li>
+      <li>Sat</li>
+    </ul>
+    <ul data-bind="foreach: creatorDataList" class="monthCreatorInfoList floatLayout">
+      <li data-bind="style: { backgroundImage: 'url(\'/' + imgBackgroundMonth + '\')' }, css:{ today: isToday == '1', past: isPast == '1', future: isFuture == '1', anotherMonth:isInTargetMonth == '0' }" class="monthCreatorInfo">
+        <p data-bind="text: day" class="day"></p>
+  <!--
+        <img data-bind="attr: { src : imgShirts }" class="shirts">
+        <p data-bind="text: name" class="name"></p>
+  -->
+        <div data-bind="style: { backgroundColor: 'rgba(' + colorBackground + ',1)' }" class="dummy" ></div>
+        <a data-bind="attr: { href: '/list/oneday/' + date }" class="link"></a>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+html {
+  height:100%;
+}
+body {
+  font-family: Helvetica, Roboto, "Droid Sans", "游ゴシック", YuGothic, "メイリオ", Meiryo, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "ＭＳ Ｐゴシック", sans-serif;
+  line-height: 1.5;
+  height:100%;
+}
+
+#wrap {
+  height:100%;
+}
+
+.content {
+  display:block;
+  overflow:hidden;
+  width:100%;
+  height:100%;
+  color:#ffffff;
+}
+
+.floatLayout {
+  &:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+  > * {
+    float:left;
+  }
+}
+
+// helper
+.peNone {
+  pointer-events: none;
+}
+
+.ofEllipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+a {
+  color:#fff;
+}

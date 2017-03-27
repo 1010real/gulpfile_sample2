@@ -1,0 +1,114 @@
+/*
+Size
+
+Styles for element sizing.
+
+Styleguide 3
+*/
+
+/*
+Width
+
+Styles of element width.
+
+Markup: <div class="{$modifiers}" style="background-color:red;">あいうえおかきくけこ</div>
+
+.w100per  - width to 100%.
+.w90per   - width to 90%.
+.w80per   - width to 80%.
+.w70per   - width to 70%.
+.w60per   - width to 60%.
+.w50per   - width to 50%.
+.w40per   - width to 40%.
+.w30per   - width to 30%.
+.w20per   - width to 20%.
+.w10per   - width to 10%.
+.w0per    - width to 0%.
+
+Styleguide 3.1
+*/
+
+.w100per {
+  width:100%;
+}
+
+.w90per {
+  width:90%;
+}
+
+.w80per {
+  width:80%;
+}
+
+.w70per {
+  width:70%;
+}
+
+.w60per {
+  width:60%;
+}
+
+.w50per {
+  width:50%;
+}
+
+.w40per {
+  width:40%;
+}
+
+.w30per {
+  width:30%;
+}
+
+.w20per {
+  width:20%;
+}
+
+.w10per {
+  width:10%;
+}
+
+.w0per {
+  width:0%;
+}
+
+/*
+Padding
+
+Styles of element padding.
+
+Markup: <div class="{$modifiers}" style="background-color:red;">あいうえおかきくけこ</div>
+
+.pa10     - padding to 10px.
+.paTop10  - padding-top to 10px. (!important)
+.paLeftRight10  - padding-left and padding-right to 10px.
+
+Styleguide 3.2
+*/
+
+.pa10 {
+  padding:10px;
+}
+
+.paTop10 {
+  padding-top:10px !important;
+}
+
+.paLeftRight10 {
+  padding-left:10px;
+  padding-right:10px;
+}
+
+.paTopHeader {
+  padding-top:50px !important;
+}
+
+/*
+Margin
+
+Styles of element margin.
+*/
+
+.maTopHeader {
+  margin-top:50px !important;
+}
